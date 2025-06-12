@@ -3,38 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Library</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button class="open-button" onclick="openForm()">New book</button>
+    <table class="table">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Pages</th>
+            <th>Read?</th>
+            <th>Delete</th>
+        </tr>
+    </table>
+    <button id="newBook">New book</button>
 
-    <div class="form-popup" id="myForm">
-    <form action="/action_page.php" class="form-container">
-        <h1>Add a new book to the library</h1>
-        <div>
-            <label for="author">Author</label>
-            <input type="text" id="author" required>
-        </div>
-        <div>
-            <label for="title">Title</label>
-            <input type="text" id="title" required>
-        </div>
-        <div>
-            <label for="pages">Pages</label>
-            <input type="text" id="pages" required>
-        </div>
-        <div>
-            <label for="isRead">Read Book?</label>
-            <input type="radio" id="yes" name="isRead" value=true>
-            <label for="yes">Yes</label>
-            <input type="radio" id="no" name="isRead" value=false>
-            <label for="no">No</label>
-        </div>
-        <button type="button" class="addBook" onclick="addBookToLibrary()">Add book</button>
-        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    <form action="#" id="form" class="hide">
+        <fieldset>
+            <h1>Add a new book</h1>
+            <div>
+                <label for="titleField">Title</label><br>
+                <input type="text" name="title" id="titleField">
+            </div>
+            <div>
+                <label for="authorField">Author</label><br>
+                <input type="text" name="author" id="authorField">
+            </div>
+            <div>
+                <label for="pagesField">Pages</label><br>
+                <input type="text" name="pages" id="pagesField">
+            </div>
+            <div>
+                <label for="readField">Read?</label>
+                <input type="checkbox" name="read" id="readField">
+            </div>
+            <button type="button" class="addBook">Add book</button>
+        </fieldset>
     </form>
-    </div>
 
+    <script src="main.js"></script>
 </body>
 </html>
