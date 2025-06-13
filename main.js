@@ -5,6 +5,8 @@ const author = document.getElementById("authorField");
 const pages = document.getElementById("pagesField");
 const isRead = document.getElementById("readField");
 
+
+
 const newBookBtn = document.querySelector("#newBook");
 const table = document.querySelector(".table");
 const form = document.querySelector("#form");
@@ -18,7 +20,7 @@ addBook.addEventListener("click", function(e){
 });
 
 addBookToLibrary("Harry Potter", "J K Rowling", 340, true);
-addBookToLibrary("Lord of the rings", "J R Tolken", 900, false);
+addBookToLibrary("Lord of the rings", "J R Tolkien", 900, false);
 addToTable();
 
 function Book(title, author, pages, isRead) {
@@ -43,14 +45,18 @@ function addBookToLibrary(title, author, pages, isRead) {
 }
 
 function addToTable(){
-  tbody.innerHTML = "";
+  tbody.innerHTML = "";  
   myLibrary.forEach(item => {
     const tr = tbody.insertRow();
     tr.insertCell().innerText = item.title;
     tr.insertCell().innerText = item.author;
     tr.insertCell().innerText = item.pages;
     tr.insertCell().innerText = item.isRead;
+    tr.insertCell().innerHTML = "<input type=\"checkbox\"/>";
+    const button = document.createElement("button");
+    button.textContent = "Delete";
+    tr.insertCell().appendChild(button);
   })
 }
 
-console.log("test")
+

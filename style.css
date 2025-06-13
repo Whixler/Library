@@ -1,9 +1,27 @@
+/* General style */
+body{
+
+  font-family: arial, sans-serif;
+  color: black;
+  padding: 50px;
+}
+
+/* Button style */
 #newBook {
-  background-color: #555;
+  background-color: #a0a0a0;
   color: white;
   padding: 16px 20px;
-  border: none;
-  width: 280px;
+  border: 2px solid grey;
+  width: 150px;
+  font-weight: 400;
+  font-size: 20px;
+  border-radius: 15px;
+  box-shadow: 5px 2px 2px #a3a2a2;
+}
+
+button{
+  max-width: 100%;
+  
 }
 
 /* The popup form */
@@ -15,19 +33,19 @@
 form {
   max-width: 30%;
   padding: 10px;
-  font-family: arial, sans-serif;
 }
 
 form fieldset{
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding-bottom: 50px;
 }
 
 .addBook{
   width: 100px;
-
 }
+
 /* Table design */
 td, th {
   border: 1px solid black;
@@ -35,9 +53,11 @@ td, th {
   padding: 6px;
 }
 table {
-  font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 80%;
+  width: 60%;
+  margin-bottom: 50px;
+  color: black;
+  background-color: white;
 }
 tr:nth-child(even) {
   background-color: #dddddd;
