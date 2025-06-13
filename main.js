@@ -51,12 +51,24 @@ function addToTable(){
     tr.insertCell().innerText = item.title;
     tr.insertCell().innerText = item.author;
     tr.insertCell().innerText = item.pages;
-    tr.insertCell().innerText = item.isRead;
-    tr.insertCell().innerHTML = "<input type=\"checkbox\"/>";
+    const isReadCell =tr.insertCell();
+    isReadCell.innerText = item.isRead;
+  
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.className = "checkStatus";
+    checkbox.checked = item.isRead;
+
+    checkbox.addEventListener("change", () => {
+      item.isRead = checkbox.checked;
+      isReadCell.innerText = checkbox.checked;
+    });
+
+    tr.insertCell().appendChild(checkbox);
+
     const button = document.createElement("button");
     button.textContent = "Delete";
     tr.insertCell().appendChild(button);
   })
 }
-
 
