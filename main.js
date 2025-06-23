@@ -67,15 +67,10 @@ function addToTable(){
     const button = document.createElement("button");
     button.textContent = "Delete";
     tr.insertCell().appendChild(button);
-    button.addEventListener("click", removeBook)
-    
+    button.addEventListener("click", () => {
+      myLibrary = myLibrary.filter(b => b.id !== item.id);
+      addToTable();
+    })
   })
-}
-
-function removeBook(event){
-  var td = event.target.parentNode;
-  var tr = td.parentNode;
-  tr.parentNode.removeChild(tr);
-  console.log("remove");
 }
 
