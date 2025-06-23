@@ -5,8 +5,6 @@ const author = document.getElementById("authorField");
 const pages = document.getElementById("pagesField");
 const isRead = document.getElementById("readField");
 
-
-
 const newBookBtn = document.querySelector("#newBook");
 const table = document.querySelector(".table");
 const form = document.querySelector("#form");
@@ -69,6 +67,15 @@ function addToTable(){
     const button = document.createElement("button");
     button.textContent = "Delete";
     tr.insertCell().appendChild(button);
+    button.addEventListener("click", removeBook)
+    
   })
+}
+
+function removeBook(event){
+  var td = event.target.parentNode;
+  var tr = td.parentNode;
+  tr.parentNode.removeChild(tr);
+  console.log("remove");
 }
 
